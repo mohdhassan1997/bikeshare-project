@@ -5,7 +5,7 @@
 Bikeshare app
 
 ### Description
-Provides bikeshare data depending on which city and specific month and day the user chooses and helps them to choose the correct input.It queries the user to choose either washington,new york or chicago and then so on it further queries about data the user wishes to view from the chosen city.Such as which month and day of the week,asks the user to view raw data and limits them to only input yes or no,and lastly it provides the commonly used start station at the chosen month and day from the chosen city,the end station,most frequent used combination of both ends,the total travel time,the mean of the travel time,and user related data such as type count(customer , subscriber,dependent),Gender count and the most earliest common year of birthday for each user.
+Provides the bikeshare data depending on which city and specific month and day the user chooses and helps them to choose the correct input.It queries the user to choose either washington,new york or chicago and then so on it further queries about data the user wishes to view from the chosen city.Such as which month and day of the week,asks the user to view raw data and limits them to only input yes or no,and lastly it provides the commonly used start station at the chosen month and day from the chosen city,the end station,most frequent used combination of both ends,the total travel time,the mean of the travel time,and user related data such as type count(customer , subscriber,dependent),Gender count and the most earliest common year of birthday for each user.
 
 ### Files used
 -.gitignore

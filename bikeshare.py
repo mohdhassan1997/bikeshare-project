@@ -8,7 +8,7 @@ CITY_DATA = { 'chicago': 'chicago.csv',
 
 def get_filters():
     """
-    Asks user to specify a city, month, and day to analyze.
+    Asks user to specify which city, month, and day to analyze.
 
     Returns:
         (str) city - name of the city to analyze
@@ -21,7 +21,7 @@ def get_filters():
     for city in CITY_DATA:      
             city=input("please enter city name(chicago,new york city,washington) or exit to leave:").lower()            
             if city=="chicago":
-                print("here's Chicago")
+                print("you picked Chicago")
                 chicago=pd.read_csv("chicago.csv")
                 break
                 
