@@ -26,7 +26,7 @@ def get_filters():
                 break
                 
             elif city=="new york city":
-                print("You picked New York City")
+                print("You picked New York")
                 new_york_city=pd.read_csv("new_york_city.csv")
                 break
                 
