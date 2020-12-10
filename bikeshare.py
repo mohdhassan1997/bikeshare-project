@@ -1,3 +1,4 @@
+
 import time
 import pandas as pd
 import numpy as np
@@ -177,13 +178,7 @@ def load_data(city, month, day):
     return df
 
 
-def time_stats(df):
-    """Displays statistics on the most frequent times of travel."""
-
-    print('\nCalculating The Most Frequent Times of Travel...\n')
-    start_time = time.time()
-
-    # display the most common month
+def common_month(df):
     count=0
     
     df["Start Time"]=pd.to_datetime(df["Start Time"])
@@ -191,21 +186,36 @@ def time_stats(df):
     common_month = df['month'].mode()[0]
     print("the most common month is : ",common_month)
 
-
-    
-    # display the most common day of week
+def common_dow(df):
     df["day_of_the_week"]=df["Start Time"].dt.dayofweek
     common_day_of_week=df["day_of_the_week"].mode()[0]
     print("\nthe most common day of the week is: ",common_day_of_week)
+
+def common_hour(df):
+    df["hour"]=df["Start Time"].dt.hour
+    common_hour=df["hour"].mode()[0]
+    print("\nthe most common start hour is: ",common_hour)
+
+def time_stats(df):
+    """Displays statistics on the most frequent times of travel."""
+
+    print('\nCalculating The Most Frequent Times of Travel...\n')
+    start_time = time.time()
+
+    # display the most common month
+    common_month(df)
+
+
+    
+    # display the most common day of week
+    common_dow(df)
     
 
 
 
 
     # display the most common start hour
-    df["hour"]=df["Start Time"].dt.hour
-    common_hour=df["hour"].mode()[0]
-    print("\nthe most common start hour is: ",common_hour)
+    common_hour(df)
 
 
 
