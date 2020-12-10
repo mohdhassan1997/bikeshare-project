@@ -288,18 +288,10 @@ def trip_duration_stats(df):
     print('-'*40)
 
 
-def user_stats(df):
-    """Displays statistics on bikeshare users."""
+def user_type_count(df):
+    return print("\nUser type counts:{} \n".format(df["User Type"].value_counts()))
 
-    print('\nCalculating User Stats...\n')
-    start_time = time.time()
-
-    # Display counts of user types
-    print("\nUser type counts:{} \n".format(df["User Type"].value_counts()))
-        
-
-
-    # Display counts of gender
+def gender_count(df):
     try:
         print("\nGender counts:{} \n".format(df["Gender"].value_counts()))
     except KeyError:
@@ -311,10 +303,8 @@ def user_stats(df):
                 get_filters()
             else:
                 print("that's not one of the provided options")
-                
 
-
-    # Display earliest, most recent, and most common year of birth
+def common_birthday(df):
     try:
         print("the most earliest common year of birth is:{}".format(df["Birth Year"].mode()[0].max()))
     except:
@@ -326,6 +316,25 @@ def user_stats(df):
                 get_filters()
             else:
                 print("that's not one of the provdied options")
+
+def user_stats(df):
+    """Displays statistics on bikeshare users."""
+
+    print('\nCalculating User Stats...\n')
+    start_time = time.time()
+
+    # Display counts of user types
+    user_type_count(df)
+        
+
+
+    # Display counts of gender
+    gender_count(df)
+                
+
+
+    # Display earliest, most recent, and most common year of birth
+    common_birthday(df)
                       
         
     
